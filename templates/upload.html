@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Data | Pin Storage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Pin Storage</h1>
+        <a href="/">Home</a>
+        <a href="/getData">Get Data</a>
+        <a href="/about">About</a>
+    </nav>
+
+    <div class="container">
+        <h2>Upload Data</h2>
+        <form action="/storeDataUploader" method="post" enctype="multipart/form-data">
+            <label for="file">Select file to upload:</label><br>
+            <input type="file" name="file" id="file"><br><br>
+            <input type="submit" value="Upload" class="button">
+        </form>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://davidkresila.pythonanywhere.com/">Dávid Krešila</a></p>
+    </footer>
+</body>
+</html>
