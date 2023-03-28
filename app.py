@@ -2,14 +2,13 @@ from flask import Flask, send_file, render_template, request, redirect
 import os
 from werkzeug.utils import secure_filename
 import random
-from network import get_ip
 import qrcode
 import time
 
 from getPin import renameAndCheck, getDataByPin
 
 app = Flask(__name__)
-getip = get_ip()
+
 
 
 dataFolder = os.path.abspath(os.getcwd()) + "/data/"
@@ -48,7 +47,7 @@ def downloadDataByPin():
         file = getDataByPin(pin, dataFolder)
         print("file:", file)
         if file is not None:
-            return send_file(file, as_attachment=True, download_name=file)
+            return send_file(dataFolder + file, as_attachment=True, download_name=file)
         else:
             return "file not found"
     else:
@@ -65,4 +64,4 @@ def not_found(e):
 
 
 if __name__ == "__main__":
-    app.run(host=getip, debug=True)
+    app.run( debug=True)

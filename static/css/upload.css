@@ -21,8 +21,8 @@ nav {
     background-color: #F9F9F9;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
 }
 
 nav h1 {
@@ -33,7 +33,6 @@ nav h1 {
 
 nav ul {
     list-style: none;
-    display: flex;
 }
 
 nav li {
